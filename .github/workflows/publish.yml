@@ -40,3 +40,5 @@ jobs:
 
       - name: Publish to NPM
         run: npm publish --access public --provenance
+        env:
+          NPM_CONFIG_//registry.npmjs.org/:_authToken: ${{ secrets.GITHUB_TOKEN }}
