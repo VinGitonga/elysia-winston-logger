@@ -1,6 +1,6 @@
 {
 	"name": "@vingitonga/elysia-winston-logger",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Winston logger plugin for Elysia",
 	"license": "MIT",
 	"repository": {
