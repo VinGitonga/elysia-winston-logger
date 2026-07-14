@@ -3,6 +3,14 @@
 	"version": "0.1.0",
 	"description": "Winston logger plugin for Elysia",
 	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/VinGitonga/elysia-winston-logger"
+	},
+	"bugs": {
+		"url": "https://github.com/VinGitonga/elysia-winston-logger/issues"
+	},
+	"homepage": "https://github.com/VinGitonga/elysia-winston-logger#readme",
 	"main": "./dist/index.js",
 	"module": "./dist/index.js",
 	"types": "./dist/index.d.ts",
