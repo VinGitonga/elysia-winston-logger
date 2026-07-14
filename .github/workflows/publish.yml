@@ -35,5 +35,8 @@ jobs:
       - name: Upgrade npm
         run: npm install -g npm@latest
 
+      - name: Clear cached auth configurations
+        run: rm -f .npmrc ~/.npmrc $RUNNER_TEMP/.npmrc
+
       - name: Publish to NPM
-        run: npm publish --access public
+        run: npm publish --access public --provenance
