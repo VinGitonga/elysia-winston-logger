@@ -31,10 +31,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "24.x"
-          registry-url: "https://registry.npmjs.org"
+          # registry-url: "https://registry.npmjs.org"
 
       - name: Activate Node 24
         run: echo "$(dirname $(which node))" >> $GITHUB_PATH
+
+      - name: Initialize OIDC Configuration
+        run: |
+          echo "registry=https://registry.npmjs.org/" > .npmrc
+          echo "//registry.npmjs.org/:_authToken=\${ACTIONS_ID_TOKEN_REQUEST_TOKEN}" >> .npmrc
 
       - name: Upgrade npm
         run: npm install -g npm@latest
