@@ -33,6 +33,9 @@ jobs:
           node-version: "24.x"
           registry-url: "https://registry.npmjs.org"
 
+      - name: Activate Node 24
+        run: echo "$(dirname $(which node))" >> $GITHUB_PATH
+
       - name: Upgrade npm
         run: npm install -g npm@latest
 
