@@ -51,6 +51,9 @@ export function ElysiaLogging(logger: Logger = console, options: RequestLoggerOp
 			const clientIP = server ? (getIP(request.headers, ipHeaders) ?? server.requestIP(request)?.address ?? undefined) : undefined
 			return { ip: clientIP }
 		})
+		.derive({ as: 'global' }, () => ({
+			log: logger,
+		}))
 		.onError(({ store, error }) => {
 			;(store as { error?: unknown }).error = error
 		})
