@@ -3,3 +3,4 @@ tsconfig.json
 biome.json
 .gitignore
 bun.lock
+.github

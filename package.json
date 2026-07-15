@@ -9,7 +9,7 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/VinGitonga/elysia-winston-logger"
+		"url": "git+https://github.com/VinGitonga/elysia-winston-logger.git"
 	},
 	"bugs": {
 		"url": "https://github.com/VinGitonga/elysia-winston-logger/issues"
