@@ -7,16 +7,17 @@
       "dependencies": {
         "date-fns": "^4.4.0",
         "date-fns-tz": "^3.2.0",
+        "winston-transport": "^4.9.0",
       },
       "devDependencies": {
         "@biomejs/biome": "2.5.3",
         "@types/bun": "latest",
         "elysia": "^1.4.29",
+        "typescript": "^5",
         "winston": "^3.19.0",
       },
       "peerDependencies": {
         "elysia": ">=1.4.0",
-        "typescript": "^5",
         "winston": ">=3.0.0",
       },
     },

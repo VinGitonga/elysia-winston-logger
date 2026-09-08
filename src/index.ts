@@ -1,7 +1,11 @@
 import util from 'node:util'
 import { createLogger, format, type Logger, transports } from 'winston'
+import type WinstonTransport from 'winston-transport'
 import { ElysiaLogging } from './elysiaLogging'
 import { LogFormat } from './logger-types'
+
+export { type DbInsertFn, type DbLogEntry, DbTransport, type DbTransportOptions } from './dbTransport'
+export { LogFormat, type LogFormatType } from './logger-types'
 
 const inspect = (value: unknown) =>
 	util.inspect(value, {
@@ -46,9 +50,16 @@ export const defaultLogger: Logger = createLogger({
 	transports: [new transports.Console()],
 })
 
-export const winstonLogger = (customLogger?: Logger, options?: { level?: string; format?: (typeof LogFormat)[keyof typeof LogFormat] }) => {
+export const winstonLogger = (customLogger?: Logger, options?: { level?: string; format?: (typeof LogFormat)[keyof typeof LogFormat]; transports?: WinstonTransport[] }) => {
 	// If they pass their own logger, use it. Otherwise use your default.
 	const loggerToUse = customLogger ?? defaultLogger
+
+	// Attach any extra transports (e.g. DbTransport) to the logger
+	for (const transport of options?.transports ?? []) {
+		if (!loggerToUse.transports.includes(transport)) {
+			loggerToUse.add(transport)
+		}
+	}
 
 	// Provide sensible defaults if they don't pass options
 	const pluginOptions = {
