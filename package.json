@@ -20,6 +20,9 @@
 	"types": "./dist/index.d.ts",
 	"type": "module",
 	"scripts": {
+		"version:patch": "bun pm version patch",
+		"version:minor": "bun pm version minor",
+		"version:major": "bun pm version major",
 		"build": "rm -rf dist && bun build ./src/index.ts --outdir ./dist --target node && tsc",
 		"prepublishOnly": "bun run build",
 		"format": "biome format --write .",
