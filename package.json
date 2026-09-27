@@ -1,5 +1,5 @@
 {
-	"name": "@vingitonga/elysia-winston-logger",
+	"name": "@vingitonga-oss/elysia-winston-logger",
 	"version": "0.1.4",
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org/",
